@@ -3,7 +3,7 @@ export interface ILista {
     id: number;
     titulo: string;
     fechaCreacion: Date;
-    fechaTermino: Date ;
+    fechaTermino: Date;
     terminada: boolean;
     items: IItems[];
 }

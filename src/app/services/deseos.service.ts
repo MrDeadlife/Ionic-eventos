@@ -15,8 +15,16 @@ export class DeseosService {
     //this.listas.push(lista1, lista2);
   }
 
-  crearlista(titulo: string) {
-    const nuevalista = new ILista(titulo); 
+  crearlista = (titulo: string): number => {
+    const date: Date = new Date();
+    const nuevalista: ILista = {
+      id: date.getTime(),
+      titulo: titulo,
+      fechaCreacion: date,
+      fechaTermino: null,
+      terminada: false,
+      items: []
+    };
     this.listas.push(nuevalista); // insertando el nuevo objeto a nuevalista
     this.guardarStorage(); //llamando la funcion guardarStorage()
     return nuevalista.id;
@@ -24,12 +32,13 @@ export class DeseosService {
 
   obtenerLista(id: string | number) {
     id = Number(id);
-   return this.listas.find((listaData => listaData.id === id)) ;
+    return this.listas.find((listaData => listaData.id === id));
   }
 
-  guardarStorage() {
+  private guardarStorage = (): void => {
     localStorage.setItem("data", JSON.stringify(this.listas)); //el local storage solo admite strings
   }
+
   cargarStorage() {
     if (localStorage.getItem("data")) { //localsrotaje devuelve un string no compatible con el tipo listas[]
       this.listas = JSON.parse(localStorage.getItem("data")); //convirtiendo a json para que sea de tipo listas[]

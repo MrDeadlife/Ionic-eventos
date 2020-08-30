@@ -1,4 +1,4 @@
 export interface IItems {
-    description:string;
-    done:boolean;
+    description: string;
+    done: boolean;
 }

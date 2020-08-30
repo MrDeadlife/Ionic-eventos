@@ -4,6 +4,6 @@ export interface ILista {
     titulo: string;
     fechaCreacion: Date;
     fechaTermino: Date ;
-    terminada: boolean;
+    terminada:boolean ;
     items: IItems[];
 }

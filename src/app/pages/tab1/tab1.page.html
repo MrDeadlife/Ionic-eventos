@@ -4,13 +4,8 @@
       <ion-title>Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  <app-listas [terminada]="false"></app-listas>
 
-  <ion-list>
-    <ion-item *ngFor="let lista of deseosService.listas">
-      <ion-label>{{lista.titulo}}</ion-label>
-      <ion-icon name="create-outline"></ion-icon>
-    </ion-item>
-  </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="agregarLista()">
       <ion-icon name="add"></ion-icon>

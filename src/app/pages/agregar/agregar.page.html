@@ -1,22 +1,35 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Agregar lista</ion-title>
+    <ion-title>{{lista.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item>
+      <!--() = emite , [] escucha, el ngmodel emite y escucha-->
       <ion-label position="floating">Nuevo Item</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input
+        type="text"
+        (ionChange)="addItem($event)"
+        debounce="1000"
+      ></ion-input>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-list-header>
+    <ion-list-header *ngIf="lista.items.length > 0" class="animated fadeInDown">
       <ion-label>Tareas por hacer</ion-label>
     </ion-list-header>
-    <ion-item>
-      <ion-checkbox slot="start"></ion-checkbox>
-      <ion-label>Recordar algo</ion-label>
-    </ion-item>
+    <ion-item-sliding  *ngFor=" let tarea of lista.items; let i = index " class="animated fadeInDown">
+      <ion-item>
+        <ion-checkbox slot="start" (ionChange)="cambioCheck($event, i)" [checked]="tarea.done"></ion-checkbox>
+        <ion-label>{{tarea.description}}</ion-label>
+      </ion-item>
+      <ion-item-options slide="start">
+        <ion-item-option (click)="deleteItem(i)" color="danger">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
   </ion-list>
 </ion-content>

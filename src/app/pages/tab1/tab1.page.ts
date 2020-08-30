@@ -3,6 +3,7 @@ import { DeseosService } from "../../services/deseos.service";
 import { Router } from "@angular/router";
 import { AlertController } from "@ionic/angular";
 import { Button } from "protractor";
+import { ILista } from "../../models/ilista";
 
 @Component({
   selector: "app-tab1",
@@ -19,7 +20,7 @@ export class Tab1Page {
   async agregarLista() {
     // this.router.navigateByUrl('/tabs/tab1/agregar');
     const alert = await this.elerCtrl.create({
-      header: "Alert",
+      header: "Ingrese titulo de lista",
       inputs: [
         {
           name: "titulo",

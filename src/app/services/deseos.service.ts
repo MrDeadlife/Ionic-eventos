@@ -13,7 +13,11 @@ export class DeseosService {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   crearlista(titulo: string) {
+=======
+  crearlista = (titulo: string): number => {
+>>>>>>> 6e32ed9fb7c61a45a428f5e2b97e288086395632
 =======
   crearlista = (titulo: string): number => {
 >>>>>>> 6e32ed9fb7c61a45a428f5e2b97e288086395632
@@ -24,8 +28,13 @@ export class DeseosService {
       fechaCreacion: date,
       fechaTermino: null,
 <<<<<<< HEAD
+<<<<<<< HEAD
       terminada:false,
       items: [],
+=======
+      terminada: false,
+      items: []
+>>>>>>> 6e32ed9fb7c61a45a428f5e2b97e288086395632
 =======
       terminada: false,
       items: []
@@ -39,6 +48,7 @@ export class DeseosService {
   public obtenerLista(id: string | number) {
     id = Number(id);
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.listas.find((listaData) => listaData.id === id);
   }
 
@@ -48,6 +58,8 @@ export class DeseosService {
 
   //el cargarStorage se llama en el constructor
 =======
+=======
+>>>>>>> 6e32ed9fb7c61a45a428f5e2b97e288086395632
     return this.listas.find((listaData => listaData.id === id));
   }
 
@@ -55,6 +67,9 @@ export class DeseosService {
     localStorage.setItem("data", JSON.stringify(this.listas)); //el local storage solo admite strings
   }
 
+<<<<<<< HEAD
+>>>>>>> 6e32ed9fb7c61a45a428f5e2b97e288086395632
+=======
 >>>>>>> 6e32ed9fb7c61a45a428f5e2b97e288086395632
   cargarStorage() {
     if (localStorage.getItem("data")) {

@@ -15,7 +15,6 @@ export class ListasComponent implements OnInit {
   (buscando el ionlist donde esta el boton, si hay mas de un ionlis regresa 
   un array con todos los ionlist)*/
   @ViewChild("slideLista") listaa: IonList; // buscando la etiqueta html en este caso seria **slideLista**
-
   lista: ILista;
   constructor(
     public deseosService: DeseosService,
